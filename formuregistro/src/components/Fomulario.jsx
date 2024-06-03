@@ -8,20 +8,24 @@ const Formulario = () => {
   const [email, setEmail] = useState("");
   const [clave, setPassword] = useState("");
   const [confirmaclave, setConfirmaPassword] = useState("");
+  const [validacion, setError] = useState(0);
+  // 0 -No hay error
+  // 1 - Campos Incompletos
+  // 2 - Clave Diferentes
+  // 3 - Registro Exitoso
 
   const validaentradas = (e) => {
     e.preventDefault();
 
     if (nombre == "" || email === "" || clave === "" || confirmaclave === "") {
-      alert("Todos los Campos Deben estar Completos ");
+      setError(1);
+    } else {
+      setError(3);
     }
 
     // Valida Cada Input
     if (clave !== confirmaclave) {
-      alert("Error en Clave");
-      setAlert({ message: "Las contraseñas no coinciden.", variant: "danger" });
-    } else {
-      alert("No Hay Error");
+      setError(2);
     }
   };
 
@@ -39,7 +43,6 @@ const Formulario = () => {
               value={nombre}
             />
           </div>
-
           <div className="form-floating mb-3">
             <input
               type="email"
@@ -50,7 +53,6 @@ const Formulario = () => {
               value={email}
             />
           </div>
-
           <div className="form-floating mb-3">
             <input
               type="password"
@@ -61,7 +63,6 @@ const Formulario = () => {
               value={clave}
             />
           </div>
-
           <div className="form-floating mb-3">
             <input
               type="password"
@@ -72,6 +73,9 @@ const Formulario = () => {
               value={confirmaclave}
             />
           </div>
+          <p>
+            <Alert nombre={validacion} />
+          </p>
           <button type="submit" classname="btn btn-success">
             Registrarse
           </button>
