@@ -10,7 +10,7 @@ function Registro() {
         <SocialButton iconorrss="./src/assets/img/gith-32.png" />
         <SocialButton iconorrss="./src/assets/img/link-32.png" />
       </div>
-      <p className="fs-6 text center">o usa u e-mail para registrate</p>
+      <p className="fs-6 text center">o usa u E-mail para registrarte</p>
     </>
   );
 }
