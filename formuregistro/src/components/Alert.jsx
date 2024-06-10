@@ -6,7 +6,7 @@ function Alert(mensaje) {
     mensajefinal = "Se deben Completar Todos los Campos";
   }
   if (mensaje.nombre === 2) {
-    mensajefinal = "Las Claves Son Diferentes";
+    mensajefinal = "Las Contraseñas Son Diferentes";
   }
   if (mensaje.nombre === 3) {
     mensajefinal = "El Registro Fue Exitoso";
